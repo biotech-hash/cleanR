@@ -26,8 +26,8 @@ clean_numeric <- function(df) {
   df[df$ObservationTime >= 0 & df$ObservationTime <= 100, ]
 }
 
-clean_na = function(x){
-  my.data = my.data[rowSums(my.data == "" | is.na(my.data)) == 0,]
+clean_na <- function(df) {
+  df[rowSums(is.na(df) | df == "") == 0, ]
 }
 
 my.data <- clean_character(my.data)
